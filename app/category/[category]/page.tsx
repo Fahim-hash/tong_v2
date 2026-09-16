@@ -1,0 +1,2 @@
+import Link from 'next/link';import {articles} from '../../lib/data';
+export default async function Category({params}:{params:Promise<{category:string}>}){const {category}=await params;const list=articles.filter(a=>a.category===decodeURIComponent(category));return <div className="wrap section"><div className="eyebrow">ক্যাটাগরি</div><h1>{decodeURIComponent(category)}</h1>{list.map(a=><article className="card" key={a.slug}><Link className="story" href={`/articles/${a.slug}`}><h2>{a.title}</h2><p>{a.excerpt}</p></Link></article>)}</div>}
