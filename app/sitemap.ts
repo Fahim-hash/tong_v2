@@ -1,0 +1,1 @@
+import type {MetadataRoute} from 'next';import {articles} from './lib/data';export default function sitemap():MetadataRoute.Sitemap{return [{url:'https://tong-v2.vercel.app',lastModified:new Date()},...articles.map(a=>({url:`https://tong-v2.vercel.app/articles/${a.slug}`,lastModified:new Date(a.publishedAt)}))]}
